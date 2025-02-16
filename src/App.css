@@ -1,0 +1,47 @@
+.container {
+  text-align: center;
+  margin: 50px;
+}
+
+.whole-drum {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr); /* 10 columnas para las primeras dos filas */
+  gap: 20px;
+  grid-template-rows: auto auto auto; /* Tres filas */
+  margin: 50px auto;
+  background-color: rgb(16, 16, 16);
+  padding: 28px;
+  border-radius: 10px;
+  width: min-content;
+}
+
+/* Centrar los elementos de la última fila */
+.whole-drum > .drum-pad:nth-child(n+21) {
+  grid-column: span 1; 
+}
+
+/* Centrar la última fila (fila 3) */
+.whole-drum > .drum-pad:nth-child(21) {
+  grid-column: 2 / span 1; 
+}
+
+.drum-pad {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #2f2f2f;
+  background-color: #3f3f3f;
+  color: white;
+  font-size: 20px;
+  border-radius: 8px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.264);
+  transition: all 0.2s ease-in-out;
+}
+
+.drum-pad:active {
+  transform: translate(4px, 4px);
+}
+
+.drum-pad:focus-visible {
+  border: none;
+  outline: none;
+}
